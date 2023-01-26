@@ -27,7 +27,7 @@ public class DataSourceDemoApplication implements CommandLineRunner {
 	@Override
 	public void run(String... args) throws Exception {
 		showConnection();
-		// showData();
+		showData();
 	}
 
 	private void showConnection() throws SQLException {
@@ -37,9 +37,16 @@ public class DataSourceDemoApplication implements CommandLineRunner {
 		conn.close();
 	}
 
-	// private void showData() {
-	// 	jdbcTemplate.queryForList("SELECT * FROM FOO")
-	// 			.forEach(row -> log.info(row.toString()));
-	// }
+	private void showData() {
+		jdbcTemplate.queryForList("SELECT * FROM FOO")
+				.forEach(row -> log.info(row.toString()));
+	}
 }
+	/*
+			http://localhost:6555/actuator/health
 
+	项目运行起来之后 log信息里会有数据库连接信息
+	也可以通过
+	访问 http://localhost:6555/actuator/beans 访问应用程序上下文看看配置了哪些bean
+
+	*/
