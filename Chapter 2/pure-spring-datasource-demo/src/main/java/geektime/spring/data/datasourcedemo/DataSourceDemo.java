@@ -59,3 +59,19 @@ public class DataSourceDemo {
         conn.close();
     }
 }
+
+/*
+
+spring boot做了哪些自动配置
+	DataSourceAutoConfiguration
+	配置默认数据源
+	DataSource项
+
+	DataSourceTransactionManagerAutoConfiguration
+	配置了默认的platformTransactionManager
+	DataSourceTransactionManager
+
+	JdbcTemplateAutoConfiguration
+	配置了JdbcTemplate
+
+*/
